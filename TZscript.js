@@ -1,4 +1,4 @@
-import zonemap from './zones.json' assert {type: 'json'};
+import zonemap from './DSTzones.json' assert {type: 'json'};
 
 
 
