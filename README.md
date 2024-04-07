@@ -1,2 +1,4 @@
 # Time-Zone-Converter
-Converts Times from one place to another 
+Convert Time from one place to another 
+
+v 1.0.0
