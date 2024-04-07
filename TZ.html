@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timezone Converter</title>
+    <!--JQUERY:-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="TZstyles.css">
+    
+</head>
+<body>
+    <div class="intro">
+        <div class="introtext" align="center"> Time Zone Converter </div>
+    </div>
+    <form class="form1">
+        <div id="input">
+            <div> Enter current time: </div>
+            <input type="text" id="timefield">
+        </div>
+
+        <div class="Timezones-flexcontainer">
+            <div id="l1">
+                <div class="tesxt1">Select your timezone: </div>
+            </div>
+            <div id="l1input">
+                <label for="srcTimeZone"></label>
+                <label>
+                    <!--can dropdown from json itself-->
+                    <select class="dropdown" id="srcTimeZone">
+                    </select>
+                </label>
+            </div>
+            
+            <div id="l2">
+                <div class="tesxt1">Select other timezone: </div>
+            </div>
+            <div id="l2input">
+                <label for="desTimeZone"></label>
+                <label>
+                    <select class="dropdown" id="desTimeZone">
+                    </select>
+                </label>
+            </div>
+
+
+        </div>
+
+        <br>
+        <br>
+        <div style="display:flex; justify-content:center;">
+            <button id="submitButton" type="submit" onclick="checkTime()"> Submit </button>
+        </div>
+    </form>
+
+    <div class="result">
+        <p id="timeresult"></p>
+    </div>
+    <script src="TZscript.js" type="module"></script>  
+    <script src="validation.js"></script>
+    <!--needed type=module to successfully import the json-->
+</body>
+</html>
