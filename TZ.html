@@ -1,44 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timezone Converter</title>
     <!--JQUERY:-->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="TZstyles.css">
-    
+    <!-- <link rel="stylesheet" type="text/css" href="TZstyles.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="intro">
-        <div class="introtext" align="center"> Time Zone Converter </div>
+<body class="text-white" style="
+    font-family: 'Rajdhani'; 
+    background-color: #121212;
+    font-size: 30px;    
+    ">
+    <div class="p-3 bg-primary text-white" align="center" style="font-size: 50px; font-weight: 600;">
+        <div> Time Zone Converter </div>
     </div>
+    
     <form class="form1">
-        <div id="input">
-            <div> Enter current time: </div>
-            <input type="text" id="timefield">
+        
+
+        <div class="container-sm pt-4" align="center">
+            <input class="form-control" id="timefield" placeholder="Enter current time" style="font-size: 20px;">
         </div>
 
-        <div class="Timezones-flexcontainer">
-            <div id="l1">
-                <div class="tesxt1">Select your timezone: </div>
-            </div>
-            <div id="l1input">
+        <div class="container pt-4" align="center">
+
+            <div>
                 <label for="srcTimeZone"></label>
-                <label>
+                <label class="container-lg"> 
+                    <div id="l1">
+                        <div>Select your timezone: </div>
+                    </div>
                     <!--can dropdown from json itself-->
-                    <select class="dropdown" id="srcTimeZone">
+                    <select class="form-select dropdown1" id="srcTimeZone" style="font-size: 20px;">
                     </select>
                 </label>
             </div>
             
-            <div id="l2">
-                <div class="tesxt1">Select other timezone: </div>
-            </div>
-            <div id="l2input">
+        
+            <div class="pt-4">
                 <label for="desTimeZone"></label>
-                <label>
-                    <select class="dropdown" id="desTimeZone">
+                <label class="container-lg">
+                    <div>
+                        <div>Select other timezone: </div>
+                    </div>
+                    <select class="form-select dropdown1" id="desTimeZone" style="font-size: 20px;">
                     </select>
                 </label>
             </div>
@@ -46,18 +58,20 @@
 
         </div>
 
-        <br>
-        <br>
-        <div style="display:flex; justify-content:center;">
-            <button id="submitButton" type="submit" onclick="checkTime()"> Submit </button>
+        <div class="d-flex justify-content-center pt-4">
+            <button type="button" class="btn btn-outline-primary btn" id="submitButton" onclick="checkTime()"> Submit </button>
         </div>
+    
     </form>
 
-    <div class="result">
+    <div class="container result" align="center" style="font-size: 30px;">
         <p id="timeresult"></p>
     </div>
+
     <script src="TZscript.js" type="module"></script>  
     <script src="validation.js"></script>
     <!--needed type=module to successfully import the json-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
