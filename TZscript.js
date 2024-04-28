@@ -74,7 +74,7 @@ function hourmin(Seconds) {
 
 //? EventListener to populate the dropdown menu to get all the timezones
 document.addEventListener('DOMContentLoaded' , function () {
-    const select = document.getElementsByClassName("dropdown");
+    const select = document.getElementsByClassName("dropdown1");
 
     for (const timezone in zonemap) {
         const option = document.createElement("option");        //creates an option element with addable value and text.
