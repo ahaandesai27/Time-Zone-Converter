@@ -2,9 +2,9 @@
 Convert Time from one place to another 
 
 Technologies used:
-HTML5
-CSS3 & Bootstrap 5
-JavaScript
+- HTML5
+- CSS3 & Bootstrap 5
+- JavaScript
 
 
 # GitHub Pages Link:
