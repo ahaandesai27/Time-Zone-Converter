@@ -5,7 +5,7 @@ Technologies used:
 - HTML5
 - CSS3 & Bootstrap 5
 - JavaScript
-
+- jQuery for form handling
 
 # GitHub Pages Link:
 https://ahaandesai27.github.io/Time-Zone-Converter/TZ.html
