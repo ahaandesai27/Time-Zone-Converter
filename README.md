@@ -10,6 +10,9 @@ A website for conversion of time between regions
 - jQuery for form handling
 - axios for HTTP requests
 
+### API Used:
+- https://worldtimeapi.org/
+
 ## GitHub Pages Link:
 https://ahaandesai27.github.io/Time-Zone-Converter/TZ.html
 
