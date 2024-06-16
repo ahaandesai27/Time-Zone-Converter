@@ -14,4 +14,4 @@ A website for conversion of time between regions
 https://ahaandesai27.github.io/Time-Zone-Converter/TZ.html
 
 
-v 1.2.0
+v 1.3.0
