@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+:root {
+    --lex: "Lexend", sans-serif;
+    --turq: rgb(40, 214, 139);
+}
+
+@media screen and (min-width: 1000px) {
+body {
+    background-color: #121212;
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: var(--lex);
+}
+
+
+.intro {
+    background-color: var(--turq);
+    padding: 0;
+    font-size: 50px;
+    height: 10vh;
+}
+
+.form1 {
+    margin-top: 15vh;
+}
+
+#input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    font-size: 25px;
+    margin-left: 2.5vw;
+}
+
+
+#timefield {
+   margin-left: 10vw;
+   width: 190px;
+   height: 4vh;
+   font-size: 3vh;
+   font-family: var(--lex);
+   background-color: grey;
+
+}
+
+
+.Timezones-flexcontainer {
+    margin-top: 4vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Timezones-flexcontainer label {
+    font-size: 25px;
+    font-family: var(--lex);
+}
+#l1 {
+    font-size: 25px;
+}
+
+#l2 {
+    font-size: 25px;
+}
+#l1input select {
+    width: 350px;
+    height: 4vh;
+    font-size: 3vh;
+    background-color: grey;
+}
+
+#l2input select {
+    width: 350px;
+    height: 4vh;
+    font-size: 3vh;
+    background-color: grey
+}
+
+#submitButton {
+    background-color: grey;
+    font-size: 3vh;
+    font-family: var(--lex);
+    width: 200px;
+    height: 5vh;
+
+}
+
+.result {
+    font-size: 30px;
+    margin-left: 2vw;
+    margin-top: 75px;
+}
+}
+
+@media screen and (max-width: 1000px) 
+{
+    body {
+        background-color: #121212;
+        margin: 0;
+        color: white;
+        font-family: var(--lex);
+        font-size: 25px;
+    }
+    
+    
+    .intro {
+        background-color: var(--turq);
+        padding: 0;
+        margin: 0;
+        height: 5vh;
+        font-size: 3.5vh;
+    }
+    
+    .form1 {
+        margin-top: 5vh;
+        font-family: var(--lex);
+        font-size: 25px;
+    }
+    
+    #input {
+        margin-left: 2vw;
+    }
+    
+    
+    #timefield {
+        background-color: grey;
+        font-family: var(--lex);
+        height: 4vh;
+        width: 250px;
+        font-size: 25px;
+    }
+    
+    
+    .Timezones-flexcontainer {
+        margin-top: 3vh;
+        margin-left: 2vw;
+    }
+    
+    #l2 {
+        margin-top: 2vh;
+    }
+    #l1input select {
+        font-size: 17px;;
+        height: 4vh;
+        font-family: var(--lex);
+        background-color: grey;
+    }
+    
+    #l2input select {
+        font-size: 17px;
+        height: 4vh;
+        font-family: var(--lex);
+        background-color: grey
+    }
+    
+    #submitButton {
+        font-size: 17px;
+        background-color: grey;
+        font-family: var(--lex);
+        height: 4vh;
+        width: 200px;
+    }
+    .result {
+        margin-left: 2vw;
+    }
+}

@@ -4,65 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timezone Converter</title>
+    <!--JQUERY:-->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="TZstyles.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body style="
+<body class="text-white" style="
     font-family: 'Rajdhani'; 
-    font-size: 30px;    
-    font-weight: 500;
     background-color: #121212;
+    font-size: 30px;    
     ">
-    <div class="p-3 bg-primary text-dark" align="center"id="header" style="font-size: 50px; font-weight: 600;">
+    <div class="p-3 bg-primary text-white" align="center" style="font-size: 50px; font-weight: 600;">
         <div> Time Zone Converter </div>
     </div>
     
-    
     <form class="form1">
         
-        <div class="d-flex justify-content-end pe-4 pt-3" style="font-size: 20px;">
-            <p>Theme<pre>  </pre></p>
-            <button class="form-check-input" type="radio" name="darkmode" id="darkmode" value="option1"></button>
-        </div>
+
         <div class="container-sm pt-4" align="center">
-            <input class="form-control" id="timefield" placeholder="Enter current time" style="font-size: 20px; font-weight: 500;">
+            <input class="form-control" id="timefield" placeholder="Enter current time" style="font-size: 20px;">
         </div>
 
-        <div class="container pt-4" align="center">
+        <div class="container" align="center">
 
             <div>
                 <label for="srcTimeZone"></label>
                 <label class="container-lg"> 
-                    <div id="l1">
-                        <div>Select your timezone: </div>
+                    <div id="l1"><div>Select source timezone: </div></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <select class="form-select dropdown1" id="srcTimeZoneArea" style="font-size: 20px;">
+                                <option id="initial">Select Continent</option>
+                                <option name="Africa">Africa</option>
+                                <option name="America">America</option>
+                                <option name="Antarctica">Antarctica</option>
+                                <option name="Asia">Asia</option>
+                                <option name="Atlantic">Atlantic</option>
+                                <option name="Australia">Australia</option>
+                                <option name="Europe">Europe</option>
+                                <option name="Indian">Indian</option>
+                                <option name="Pacific">Pacific</option>
+                            </select>
+                        </div>
+                        <div class="col-md-8">
+                            <select class="form-select dropdown1" id="srcTimeZoneLocation" style="font-size: 20px;">
+                                <option>Select Location</option>
+                            </select>
+                        </div>
                     </div>
-                    <!--can dropdown from json itself-->
-                    <select class="form-select dropdown1" id="srcTimeZone" style="font-size: 20px; font-weight: 500;">
-                    </select>
+                </label>
+            </div>
+
+            <div>
+                <label for="srcTimeZone"></label>
+                <label class="container-lg"> 
+                    <div id="l1"><div>Select destination timezone: </div></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <select class="form-select dropdown1" id="desTimeZoneArea" style="font-size: 20px;">
+                                <option id="initial">Select Continent</option>
+                                <option name="Africa">Africa</option>
+                                <option name="America">America</option>
+                                <option name="Antarctica">Antarctica</option>
+                                <option name="Asia">Asia</option>
+                                <option name="Atlantic">Atlantic</option>
+                                <option name="Australia">Australia</option>
+                                <option name="Europe">Europe</option>
+                                <option name="Indian">Indian</option>
+                                <option name="Pacific">Pacific</option>
+                            </select>
+                        </div>
+                        <div class="col-md-8">
+                            <select class="form-select dropdown1" id="desTimeZoneLocation" style="font-size: 20px;">
+                                <option>Select Location</option>
+                            </select>
+                        </div>
+                    </div>
                 </label>
             </div>
             
         
-            <div class="pt-4">
-                <label for="desTimeZone"></label>
-                <label class="container-lg">
-                    <div>
-                        <div>Select other timezone: </div>
-                    </div>
-                    <select class="form-select dropdown1" id="desTimeZone" style="font-size: 20px; font-weight: 500;">
-                    </select>
-                </label>
-            </div>
 
 
         </div>
 
         <div class="d-flex justify-content-center pt-4">
-            <button type="button" class="btn btn-outline-primary" id="submitButton" onclick="checkTime()"> Submit </button>
+            <button type="button" class="btn btn-outline-primary btn" id="submitButton" onclick="checkTime()"> Submit </button>
         </div>
     
     </form>
@@ -71,10 +102,12 @@
         <p id="timeresult"></p>
     </div>
 
-    <script src="TZscript.js" type="module"></script>  
+    <script src="tzscriptAPI.js" type="module"></script>  
     <script src="validation.js"></script>
-    <script src="darkmode.js"></script>
+    <!--needed type=module to successfully import the json-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js" integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

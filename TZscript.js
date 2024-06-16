@@ -1,4 +1,4 @@
-import zonemap from './DSTzones.json' assert {type: 'json'};
+import zonemap from './zones.json'
 
 
 
@@ -131,4 +131,6 @@ $(document).ready(function () {
         
         
     })
-});
+})
+
+
