@@ -1,5 +1,5 @@
 # Time-Zone-Converter
-Convert Time from one place to another 
+A website for conversion of time between regions 
 
 ## Technologies used:
 - Vanilla:
