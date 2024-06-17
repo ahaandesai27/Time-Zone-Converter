@@ -1,5 +1,5 @@
 # Time-Zone-Converter
-Convert Time from one place to another 
+A website for conversion of time between regions, using the World Time API.
 
 ### Technologies used:
 - HTML5
