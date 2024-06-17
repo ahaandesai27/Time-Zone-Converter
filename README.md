@@ -8,7 +8,7 @@ Technologies used:
 - jQuery for form handling
 
 # GitHub Pages Link:
-https://ahaandesai27.github.io/Time-Zone-Converter/TZ.html
+https://ahaandesai27.github.io/Time-Zone-Converter/
 
 
 v 1.2.0
