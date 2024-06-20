@@ -1,5 +1,5 @@
 # Time-Zone-Converter
-A website for conversion of time between regions, using the World Time API.
+A website for conversion of time between regions, using the World Time API, which uses the IANA time zone standard. 
 
 ### Technologies used:
 - HTML5
