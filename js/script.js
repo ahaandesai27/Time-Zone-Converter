@@ -66,6 +66,9 @@ $(document).ready(function () {
         const srcTimeZoneLocation = $("#srcTimeZoneLocation").val();
         const desTimeZoneArea = $("#desTimeZoneArea").val();
         const desTimeZoneLocation = $("#desTimeZoneLocation").val();
+
+        console.log(time, srcTimeZoneArea, srcTimeZoneLocation, desTimeZoneArea, desTimeZoneLocation);
+        
         const offsets = await getOffSets(srcTimeZoneArea + "/" + srcTimeZoneLocation, desTimeZoneArea + "/" + desTimeZoneLocation)
         const result = convertTime(time, offsets[0], offsets[1]);
         if (result == "An error occured") {

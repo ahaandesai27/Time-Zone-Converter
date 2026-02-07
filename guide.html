@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timezone Guide - Timezone Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .timezone-card {
+            transition: transform 0.2s ease;
+        }
+        .timezone-card:hover {
+            transform: translateY(-2px);
+        }
+        .timeline-step {
+            border-left: 3px solid #0d6efd;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+        .step-number {
+            background-color: #0d6efd;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-left: -36px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body class="text-white" style="
+    font-family: 'Rajdhani'; 
+    background-color: #121212;
+    font-size: 18px;    
+    ">
+    <div class="p-3 bg-primary text-white" align="center" style="font-size: 50px; font-weight: 600;">
+        <div>Timezone Guide</div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center p-3">
+        <a href="index.html" class="btn btn-outline-primary">
+            <i class="bi bi-arrow-left"></i> Back to Converter
+        </a>
+        
+        <div class="btn" data-bs-toggle="buttons">
+            <label class="btn btn-primary active">
+                <input type="radio" class="me-2" id="dark-mode" checked/>
+                Theme
+            </label>
+        </div>  
+    </div>
+
+    <div class="container my-5">
+        <!-- How to Use Section -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card bg-dark border-primary">
+                    <div class="card-header bg-primary">
+                        <h2 class="card-title mb-0" style="font-size: 35px; font-weight: 600;">
+                            How to Use the Timezone Converter
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="timeline-step">
+                            <span class="step-number">1</span>
+                            <h4>Enter Your Current Time</h4>
+                            <p class="mb-0">Type your current local time in the format HH:MM (24-hour format) or HH:MM AM/PM (12-hour format). For example: "14:30" or "2:30 PM"</p>
+                        </div>
+                        
+                        <div class="timeline-step">
+                            <span class="step-number">2</span>
+                            <h4>Select Source Timezone</h4>
+                            <p class="mb-0">Choose the continent and then the specific location of your current timezone. This tells the converter where you are located.</p>
+                        </div>
+                        
+                        <div class="timeline-step">
+                            <span class="step-number">3</span>
+                            <h4>Select Destination Timezone</h4>
+                            <p class="mb-0">Choose the continent and location where you want to know the equivalent time. This is where you want to convert your time to.</p>
+                        </div>
+                        
+                        <div class="timeline-step">
+                            <span class="step-number">4</span>
+                            <h4>Get Your Result</h4>
+                            <p class="mb-0">Click "Submit" to see the converted time in both 24-hour and 12-hour formats for your destination timezone.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Available Timezones Section -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card bg-dark border-primary">
+                    <div class="card-header bg-primary">
+                        <h2 class="card-title mb-0" style="font-size: 35px; font-weight: 600;">
+                            Available Timezones
+                        </h2>
+                        <p class="mb-0 mt-2" style="font-size: 16px;">
+                            Our timezone converter uses the World Time API and supports timezones across all continents.
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" id="timezoneContainer">
+                            <!-- Timezone cards will be loaded here -->
+                            <div class="col-12 text-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading timezones...</span>
+                                </div>
+                                <p class="mt-2">Loading available timezones...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Information Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card bg-dark border-secondary">
+                    <div class="card-header">
+                        <h3 class="card-title mb-0" style="font-size: 28px; font-weight: 600;">
+                            Tips & Information
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="text-primary">Time Format Support</h5>
+                                <ul>
+                                    <li>24-hour format: 14:30, 09:15, 23:45</li>
+                                    <li>12-hour format: 2:30 PM, 9:15 AM, 11:45 PM</li>
+                                    <li>Both formats are accepted and converted</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="text-primary">Daylight Saving Time</h5>
+                                <ul>
+                                    <li>Automatically handled by World Time API</li>
+                                    <li>Updates based on current date and location</li>
+                                    <li>No manual adjustment needed</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <h5 class="text-primary">Supported Regions</h5>
+                                <ul>
+                                    <li>Africa - All major African cities</li>
+                                    <li>America - North, Central, and South America</li>
+                                    <li>Asia - All Asian countries and cities</li>
+                                    <li>Europe - All European countries</li>
+                                    <li>Australia - Australian cities and territories</li>
+                                    <li>Pacific - Pacific islands and territories</li>
+                                    <li>Atlantic - Atlantic islands and regions</li>
+                                    <li>Antarctica - Antarctic research stations</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="text-primary">Common Examples</h5>
+                                <ul>
+                                    <li><strong>New York:</strong> America/New_York</li>
+                                    <li><strong>London:</strong> Europe/London</li>
+                                    <li><strong>Tokyo:</strong> Asia/Tokyo</li>
+                                    <li><strong>Sydney:</strong> Australia/Sydney</li>
+                                    <li><strong>Dubai:</strong> Asia/Dubai</li>
+                                    <li><strong>Los Angeles:</strong> America/Los_Angeles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--axios-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js" integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="js/darkmode.js"></script>
+    
+    <script src="js/load.js"></script>
+</body>
+</html>

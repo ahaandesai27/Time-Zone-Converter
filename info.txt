@@ -1,1 +1,0 @@
-This is a time zone converter which converts timezones from one location to another.
